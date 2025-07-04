@@ -3054,10 +3054,17 @@
 .end method
 
 .method public onCreate()V
-    .locals 1
+    .locals 2
 
     .line 499
     invoke-super {p0}, Lˆ/ʿ/ʿ/ˈ/ˆ;->onCreate()V
+
+    .line 500
+    const-string v0, "App Started"
+    const/4 v1, 1
+    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    move-result-object v0
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
     .line 503
     :try_start_0
@@ -3079,25 +3086,5 @@
     .line 510
     .end local v0    # "e":Ljava/lang/Exception;
     :goto_0
-    return-void
-.end method
-
-.method public ˆ()V
-    .locals 2
-
-    .line 713
-    new-instance v0, Lˆ/ʿ/ʿ/ˋ/ˎ;
-
-    invoke-direct {v0}, Lˆ/ʿ/ʿ/ˋ/ˎ;-><init>()V
-
-    .line 714
-    .local v0, "crashHandler":Lˆ/ʿ/ʿ/ˋ/ˎ;
-    invoke-virtual {p0}, Landroid/app/Application;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lˆ/ʿ/ʿ/ˋ/ˎ;->ˆ(Landroid/content/Context;)V
-
-    .line 717
     return-void
 .end method
